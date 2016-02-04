@@ -30,23 +30,12 @@ We set the following, very general and subjective, goals for the library:
  - contains convenience meta-functions
 - (relatively) fast to compile
 
-[1]: http://www.boost.org/doc/libs/release/libs/mpl/doc/index.html
-[2]: http://ericniebler.com/2014/11/13/tiny-metaprogramming-library/
-[3]: http://pdimov.com/cpp2/simple_cxx11_metaprogramming.html
-[4]: https://github.com/edouarda/brigand
-[5]: https://akrzemi1.wordpress.com/2012/03/19/meta-functions-in-c11/
-[6]: http://www.boost.org/doc/libs/release/libs/fusion/doc/html/index.html
-
-[9]: https://isocpp.org/files/papers/n3996.pdf
-[10]: https://github.com/HeliumProject/Reflect
-
-[12]: https://github.com/ericniebler/meta
-
 ## Motivation and Scope
 
 This proposal includes changes to the library facilities **only**.
+It is heavily based on [Brigand] [4] library.
 
-The basic brick in the library is a type _sequence_: a type alias or template class accepting a template parameter. **TODO**: equivalence with `std::tuple`.
+The basic brick in the library is a type _sequence_: a type alias or template class accepting a template parameter pack.
 
 ## `std::meta` namespace
 
@@ -114,3 +103,24 @@ These are handy aliases to `algorithm<Sequence, is_same<Type, _>>`, where `_` is
 #### Placeholders
 - `_`: used in `find`, `all`, `any`, etc.
 - `state`, `element`: used in `fold`, `for_each`
+
+## References
+
+1. Boost.MPL library: [http://www.boost.org/doc/libs/release/libs/mpl/] [1]. Accessed: 2016-02-04.
+1. Eric Niebler's meta library: [https://github.com/ericniebler/meta] [10]. Accessed: 2016-02-04.
+1. Brigand library: [https://github.com/edouarda/brigand] [4]. Accessed: 2016-02-04.
+1. Boost.Fusion library: [http://www.boost.org/doc/libs/release/libs/fusion/] [6]. Accessed: 2016-02-04.
+1. N3996 proposal: [https://isocpp.org/files/papers/n3996.pdf] [9]. Accessed: 2016-02-04.
+1. D4128 proposal: [https://ericniebler.github.io/std/wg21/D4128.html] [12]. Accessed: 2016-02-04.
+
+[1]: http://www.boost.org/doc/libs/release/libs/mpl/
+[2]: http://ericniebler.com/2014/11/13/tiny-metaprogramming-library/
+[3]: http://pdimov.com/cpp2/simple_cxx11_metaprogramming.html
+[4]: https://github.com/edouarda/brigand
+[5]: https://akrzemi1.wordpress.com/2012/03/19/meta-functions-in-c11/
+[6]: http://www.boost.org/doc/libs/release/libs/fusion/
+[9]: https://isocpp.org/files/papers/n3996.pdf
+[10]: https://ericniebler.github.io/std/wg21/D4128.html
+[12]: https://github.com/ericniebler/meta
+[100]: https://github.com/HeliumProject/Reflect
+
