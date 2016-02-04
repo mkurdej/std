@@ -1,2 +1,3 @@
 # std
-Standardese
+
+Standardese: C++ standards proposals.
