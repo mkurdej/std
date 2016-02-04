@@ -17,9 +17,9 @@ The presence of lots of libraries, well known and widely used, attests the neces
 - [Boost.Fusion] [6]
  - advantages and inconviences similar to Boost.MPL
  - compile-time and run-time glue
-- [Eric Niebler's *Tiny Metaprogramming Library*] [2] ([source] [12])
-- [Peter Dimov's *Simple C++11 metaprogramming*] [3]
-- [Edouard's *Brigand* library] [4]
+- [Eric Niebler's _Tiny Metaprogramming Library_] [2] ([source] [12])
+- [Peter Dimov's _Simple C++11 metaprogramming_] [3]
+- [Edouard's _Brigand_ library] [4]
 
 ### Goals
 
@@ -46,7 +46,7 @@ We set the following, very general and subjective, goals for the library:
 
 This proposal includes changes to the library facilities **only**.
 
-The basic brick in the library is a type *sequence*: a type alias or template class accepting a template parameter. **TODO**: equivalence with `std::tuple`.
+The basic brick in the library is a type _sequence_: a type alias or template class accepting a template parameter. **TODO**: equivalence with `std::tuple`.
 
 ## `std::meta` namespace
 
@@ -55,3 +55,62 @@ The proposed library resides in `std::meta` namespace and is divided into the fo
 - algorithms
 - types (helpers, placeholders, aliases)
 - functions (helpers, type traits - TODO: move to <type_traits>)
+
+### Sequences
+
+- list: a possibly non-unique list/chain/vector of types
+ - no separation of list and vector (cf. [MPL] [1])
+- map: a structure allowing to associate one type (key) to another type (value)
+ - keys are unique
+- set: a unique list of types
+
+#### Basic operations
+
+##### Modifying
+
+**NOTE:** Actually, nothing can be modified, only a new type can be created.
+
+- `clear<Sequence>`
+- `append<Sequences...>`
+- `insert<Sequence, Type>`
+- `erase<Sequence, Type>`
+- `push_front<Sequence, Type>` ?
+- `pop_front<Sequence, Type>` ?
+- `push_back<Sequence, Type>`
+- `pop_back<Sequence, Type>`
+
+##### Querying
+
+- `size<Sequence>`
+- `contains<Sequence, Type>`
+- `at<Sequence, Index>`
+- `front<Sequence> == at<Sequence, 0>`
+- `back<Sequence> == at<Sequence, size<Sequence> - 1>`
+- `has_key<Sequence, KeyType>`
+
+#### Algorithms
+- `all_if<Sequence, Predicate>`
+- `any_if<Sequence, Predicate>`
+- `find_if<Sequence, Predicate>`
+- `flatten<Sequences...>`
+- `fold<>`
+- `for_each<>`
+- `partition<>`
+- `stable_partition<>`
+- `sort<>`
+- `replace<>`
+- `reverse<>`
+- `split<>`
+- `transform<>`
+
+##### Convenience helpers
+
+These are handy aliases to `algorithm<Sequence, is_same<Type, _>>`, where `_` is a placeholder.
+
+- `all_of<Sequence, Type>`
+- `any_of<Sequence, Type>`
+- `find<Sequence, Type>`
+
+#### Placeholders
+- `_`: used in `find`, `all`, `any`, etc.
+- `state`, `element`: used in `fold`, `for_each`
