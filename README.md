@@ -1,3 +1,5 @@
 # std
 
-Standardese: C++ standards proposals.
+C++ standard proposals.
+
+- [Meta programming library](meta.md)
