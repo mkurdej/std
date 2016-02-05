@@ -4,19 +4,19 @@
 **Table of Contents**
 
 - [C++ template meta-programming utilities library proposal](#)
-  - [Introduction](#user-content-introduction)
-    - [Goals](#user-content-goals)
-  - [Motivation and Scope](#user-content-motivation-and-scope)
-  - [std::meta namespace](#user-content-stdmeta-namespace)
-    - [Sequences](#user-content-sequences)
-      - [Basic operations](#user-content-basic-operations)
-        - [Modifying](#user-content-modifying)
-        - [Querying](#user-content-querying)
-      - [Algorithms](#user-content-algorithms)
-      - [Functions](#user-content-functions)
-        - [Convenience helpers](#user-content-convenience-helpers)
-      - [Placeholders](#user-content-placeholders)
-  - [References](#user-content-references)
+  - [Introduction](#introduction)
+    - [Goals](#goals)
+  - [Motivation and Scope](#motivation-and-scope)
+  - [std::meta namespace](#stdmeta-namespace)
+    - [Sequences](#sequences)
+      - [Basic operations](#basic-operations)
+        - [Modifying](#modifying)
+        - [Querying](#querying)
+      - [Algorithms](#algorithms)
+      - [Functions](#functions)
+        - [Convenience helpers](#convenience-helpers)
+      - [Placeholders](#placeholders)
+  - [References](#references)
 
 ## Introduction
 
