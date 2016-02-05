@@ -1,5 +1,23 @@
 # C++ template meta-programming utilities library proposal
 
+[//]: <> (generated with [DocToc(http://doctoc.herokuapp.com/) )
+**Table of Contents**
+
+- [C++ template meta-programming utilities library proposal](#)
+  - [Introduction](#Introduction)
+    - [Goals](#)
+  - [Motivation and Scope](#)
+  - [std::meta namespace](#)
+    - [Sequences](#)
+      - [Basic operations](#)
+        - [Modifying](#)
+        - [Querying](#)
+      - [Algorithms](#)
+      - [Functions](#)
+        - [Convenience helpers](#)
+      - [Placeholders](#)
+  - [References](#)
+
 ## Introduction
 
 This paper describes a library support for template meta-programming in C++ language.
