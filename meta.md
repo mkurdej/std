@@ -61,7 +61,7 @@ The proposed library resides in `std::meta` namespace and is divided into the fo
 - sequences (data structures)
 - algorithms
 - types (helpers, placeholders, aliases)
-- functions (helpers, type traits - TODO: move to <type_traits>)
+- functions (helpers, type traits - TODO: move to `<type_traits>`)
 
 ### Sequences
 
