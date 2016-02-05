@@ -1,6 +1,6 @@
 # C++ template meta-programming utilities library proposal
 
-[//]: <> (generated with [DocToc(http://doctoc.herokuapp.com/) )
+[//]: # (generated with [DocToc(http://doctoc.herokuapp.com/) )
 **Table of Contents**
 
 - [C++ template meta-programming utilities library proposal](#)
