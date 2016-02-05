@@ -81,6 +81,7 @@ The proposed library resides in `std::meta` namespace and is divided into the fo
 
 - `clear<Sequence>`
 - `append<Sequences...>`
+ - analogous to [`std::tuple_cat`][201] and [`tuple_cat`][2]
 - `insert<Sequence, Type>`
 - `erase<Sequence, Type>`
 - `push_front<Sequence, Type>` ?
@@ -106,6 +107,7 @@ The proposed library resides in `std::meta` namespace and is divided into the fo
 - `find_if<Sequence, Predicate>`
 - `flatten<Sequences...>`
 - `fold<>`
+ - TODO: split `foldl` and `foldr`?
 - `for_each<>`
 - `partition<>`
 - `stable_partition<>`
@@ -114,13 +116,24 @@ The proposed library resides in `std::meta` namespace and is divided into the fo
 - `reverse<>`
 - `split<>`
 - `transform<>`
+ - similar to [`typelist_transform`][2]
 - `unique`
 
 #### Functions
 
+- `always` / `same_type`
+ - [`meta_always`][2]
+- `apply`
+ - see [`meta_apply`][2]
+- TODO: `compose`: higher-order meta-functions composition [`meta_compose`][2]
 - `identity`
 - `inherit`
-- `wrap<Sequence, template <typename...> typename Sequence>` (see [`mp_rename`][3])
+- `quote`
+ - see [`meta_quote`][2]
+- `wrap<Sequence, template <typename...> typename Sequence>`
+ - see [`mp_rename`][3]
+ - similar to [`typelist_apply`][2]
+- TODO: [`typelist_zip`][2]
 
 ##### Convenience helpers
 
@@ -129,6 +142,10 @@ These are handy aliases to `algorithm<Sequence, is_same<Type, _>>`, where `_` is
 - `all_of<Sequence, Type>`
 - `any_of<Sequence, Type>`
 - `find<Sequence, Type>`
+
+- `as_list`
+ - [`as_typelist`][2]
+- `as_sequence`
 
 #### Placeholders
 - `_`: used in `find`, `all`, `any`, etc.
@@ -158,5 +175,6 @@ These are handy aliases to `algorithm<Sequence, is_same<Type, _>>`, where `_` is
 [13]: http://pdimov.com/cpp2/simple_cxx11_metaprogramming_2.html
 [14]: https://github.com/dabrahams/mpl11
 [100]: https://github.com/HeliumProject/Reflect
+[201]: http://en.cppreference.com/w/cpp/utility/tuple/tuple_cat
 [4115]: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4115.html
 [4128]: https://ericniebler.github.io/std/wg21/D4128.html
